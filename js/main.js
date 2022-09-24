@@ -1,4 +1,4 @@
-function ingresarPago(numero) {
+function numeroDeTarjeta(numero) {
     if (numero === 12345678912) {
         alert("pago realizado");
 
@@ -10,7 +10,7 @@ function ingresarPago(numero) {
 function numeroDeTarjeta(tarjeta) {
     if (tarjeta) {
         let numero = Number(prompt("Ingresar numero"));
-        ingresarPago(numero);
+        numeroDeTarjeta(numero);
     } else {
         alert("Introduzca la tarjeta");
         
