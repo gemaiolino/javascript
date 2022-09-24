@@ -7,7 +7,7 @@ function numeroDeTarjeta(numero) {
     }
 }
 
-function Tarjeta(tarjeta) {
+function nTarjeta(tarjeta) {
     if (tarjeta) {
         let numero = Number(prompt("Ingresar numero"));
         numeroDeTarjeta(numero);
@@ -22,7 +22,7 @@ function Tarjeta(tarjeta) {
 function ingresarTarjeta() {
     let tarjeta = confirm("Ingrese la tarjeta");
 
-    Tarjeta(tarjeta);
+    nTarjeta(tarjeta);
 }
 
 
