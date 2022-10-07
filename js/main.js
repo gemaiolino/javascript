@@ -1,3 +1,7 @@
+
+
+
+
 function numeroDeTarjeta(numero) {
     if (numero === 12345678912) {
         alert("pago realizado");
@@ -13,7 +17,7 @@ function nTarjeta(tarjeta) {
         numeroDeTarjeta(numero);
     } else {
         alert("Introduzca la tarjeta");
-        
+
     }
 }
 
@@ -25,257 +29,89 @@ function ingresarTarjeta() {
     nTarjeta(tarjeta);
 }
 
-
-
 function salir() {
     alert("Proceso terminado")
 }
 
+const carrito = [];
+const obj = {}
 
-
-
-function tucuman() {
-    let preciopromo = 250000
-    let precioIndividual = 16000;
-    alert("Usted elgio el destino a Tucuman, promocion para dos personas");
+function calcularPrecio(lugar, precioPromo, precioIndividual) {
+    alert("Usted elgio el destino a " + lugar + ", promocion para dos personas");
     let personas = Number(prompt("Ingrese la catidad de personas"));
+    obj.afluencia = personas; 
     if (personas === 2) {
-        confirm("Promocion para dos personas " + "$" + preciopromo + " ¿decea confirmar?");
-        console.log(preciopromo);
-        ingresarTarjeta()
-    } else if (personas >= 1) {
-        let resultado = personas * precioIndividual;
-        confirm("Precio de su destino " + resultado + " ¿decea confirmar?");
-        
-        console.log(resultado);
-        ingresarTarjeta()
-
-
-    } else {
-        salir();
-    }
-}
-
-function bariloche() {
-    let preciopromo = 300000
-    let precioIndividual = 18000;
-    alert("Usted elgio el destino a Bariloche, promocion para dos personas");
-    let personas = Number(prompt("Ingrese la catidad de personas"));
-    if (personas === 2) {
-        confirm("Promocion para dos personas " + "$" + preciopromo + " ¿decea confirmar?");
-        console.log(preciopromo);
-        ingresarTarjeta()
-    } else if (personas >= 1) {
-        let resultado = personas * precioIndividual;
-        confirm("Precio de su destino " + "$" + resultado + " ¿decea confirmar?");
+        confirm("Promocion para dos personas " + "$" + precioPromo + " ¿desea confirmar?");
+        console.log(precioPromo);
+        carrito.push("Precio final $" + precioPromo);
+        obj.precio = precioPromo;
+        console.log(obj);
+        console.log(carrito);
+        alert("su importe a pagar es de $" + carrito);
         ingresarTarjeta();
-        console.log(resultado);
-    
-
-
-    } else {
-        
-        salir();
-    }
-}
-
-
-
-
-
-function tierraDelFuego() {
-    let preciopromo = 40000
-    let precioIndividual = 25000;
-    alert("Usted elgio el destino a Tierra Del Fuego, promocion para dos personas");
-    let personas = Number(prompt("Ingrese la catidad de personas"));
-    if (personas === 2) {
-        confirm("Promocion para dos personas " + "$" + preciopromo + " ¿decea confirmar?");
-        console.log(preciopromo);
-        ingresarTarjeta()
     } else if (personas >= 1) {
         let resultado = personas * precioIndividual;
-        confirm("Precio de su destino " + resultado + " ¿decea confirmar?");
+        confirm("Precio de su destino " + resultado + " ¿desea confirmar?");
         console.log(resultado);
-        ingresarTarjeta()
-
+        carrito.push("Precio final $" + resultado);
+        obj.precio = resultado;
+        console.log(obj);
+        console.log(carrito);
+        alert(carrito);
+        ingresarTarjeta();
 
     } else {
         salir();
     }
 }
-
-
-
-
-function marDelPlata() {
-    let preciopromo = 25000;
-    let precioIndividual = 15000;
-    alert("Usted elgio el destino a Mar Del Plata, promocion para dos personas");
-    let personas = Number(prompt("Ingrese la catidad de personas"));
-    if (personas === 2) {
-        confirm("Promocion para dos personas " + "$" + preciopromo + " ¿decea confirmar?");
-        console.log(preciopromo);
-        ingresarTarjeta()
-    } else if (personas >= 1) {
-        let resultado = personas * precioIndividual;
-        confirm("Precio de su destino " + resultado + " ¿decea confirmar?");
-        console.log(resultado);
-        ingresarTarjeta()
-
-
-    } else {
-        salir();
-    }
-}
-
-
-
-
-function elBolson() {
-    let preciopromo = 30000;
-    let precioIndividual = 19000;
-    alert("Usted elgio el destino a El Bolson, Rio Negro. Promocion para dos personas");
-    let personas = Number(prompt("Ingrese la catidad de personas"));
-    if (personas === 2) {
-        confirm("Promocion para dos personas " + "$" + preciopromo + " ¿decea confirmar?");
-        console.log(preciopromo);
-        ingresarTarjeta()
-    } else if (personas >= 1) {
-        let resultado = personas * precioIndividual;
-        confirm("Precio de su destino " + resultado + " ¿decea confirmar?");
-        console.log(resultado);
-        ingresarTarjeta()
-
-
-    } else {
-        salir();
-    }
-}
-
-
-
-
-
-function cordoba() {
-    let preciopromo = 25000;
-    let precioIndividual = 18000;
-    alert("Usted elgio el destino a San Luis, Cordoba. Promocion para dos personas");
-    let personas = Number(prompt("Ingrese la catidad de personas"));
-    if (personas === 2) {
-        confirm("Promocion para dos personas " + "$" + preciopromo + " ¿decea confirmar?");
-        console.log(preciopromo);
-        ingresarTarjeta()
-    } else if (personas >= 1) {
-        let resultado = personas * precioIndividual;
-        confirm("Precio de su destino " + resultado + " ¿decea confirmar?");
-        console.log(resultado);
-        ingresarTarjeta()
-
-
-    } else {
-        salir();
-    }
-}
-
-
-
-
-
-function jujuy() {
-    let preciopromo = 40000;
-    let precioIndividual = 16000;
-    alert("Usted elgio el destino a Jujuy, promocion para cuatro personas");
-    let personas = Number(prompt("Ingrese la catidad de personas"));
-    if (personas === 4) {
-        confirm("Promocion para cuatro personas " + "$" + preciopromo + " ¿decea confirmar?");
-        console.log(preciopromo);
-        ingresarTarjeta()
-    } else if (personas >= 1) {
-        let resultado = personas * precioIndividual;
-        confirm("Precio de su destino " + resultado + " ¿decea confirmar?");
-        console.log(resultado);
-        ingresarTarjeta()
-
-
-    } else {
-        salir();
-    }
-
-
-
-}
-
-
-
-
-
-
-function mendoza() {
-    let preciopromo = 20000;
-    let precioIndividual = 13000;
-    alert("Usted elgio el destino a Mendoza, promocion para dos personas");
-    let personas = Number(prompt("Ingrese la catidad de personas"));
-    if (personas === 2) {
-        confirm("Promocion para dos personas " + "$" + preciopromo + " ¿decea confirmar?");
-        console.log(preciopromo);
-        ingresarTarjeta()
-    } else if (personas >= 1) {
-        let resultado = personas * precioIndividual;
-        confirm("Precio de su destino " + resultado + " ¿decea confirmar?");
-        console.log(resultado);
-        ingresarTarjeta()
-
-
-    } else {
-        salir();
-    }
-}
-
-
-
 
 
 
 function destinos() {
-    console.log("1: Mendoza.");
-    console.log("2: Jujuy.");
-    console.log("3: San Luis, Cordoba.");
-    console.log("4: El Bolson, Rio negro.");
-    console.log("5: Mar Del Plata, Buenos Aires.");
-    console.log("6: Tierra del Fuego.");
-    console.log("7: Bariloche, Rio Negro.");
-    console.log("8: Tucuman.");
-    console.log("9: Cancelar la operacion.");
+    
+    const sitio = prompt(`
+    1: Mendoza.
+    2: Jujuy.
+    3: San Luis.
+    4: El Bolson.
+    5: Mar Del Plata, Buenos Aires.
+    6: Tierra del Fuego.
+    7: Bariloche
+    8: Tucuman.
+    9: Cancelar la operacion.
+    Ingrese la opcion para su destino.`)
+    
+    let destinosTuristicos = sitio.toLowerCase();
+    obj.lugar = destinosTuristicos;
 
-    let destinosTuristicos = prompt("Ingrese la opcion para su destino.")
 
     switch (destinosTuristicos) {
-        case "1":
-            mendoza();
+        case "mendoza":
+            calcularPrecio("Mendoza", 20000, 13000);
             break;
 
-        case "2":
-            jujuy();
+        case "jujuy":
+            calcularPrecio("Jujuy", 40000, 25000);
             break;
-        case "3":
-            cordoba();
+        case "san luis":
+            calcularPrecio("San Luis, Cordoba", 50000, 30000);
             break;
-        case "4":
-            elBolson()
+        case "el bolson":
+            calcularPrecio("El Bolson, Rio Negro", 60000, 35000);
             break;
-        case "5":
-            marDelPlata();
+        case "mar del plata":
+            calcularPrecio("Mar del Plata", 25000, 15000);
             break;
-        case "6":
-            tierraDelFuego();
+        case "tierra del fuego":
+            calcularPrecio("Tierra del Fuego", 70000, 40000);
             break;
-        case "7":
-            bariloche();
+        case "bariloche":
+            calcularPrecio("bariloche, Rio Negro.", 65000, 45000);
             break;
-        case "8":
-            tucuman();
+        case "tucuman":
+            calcularPrecio("Tucuman", 35000, 18000);
             break;
-        case "9":
+        case "salir":
             salir();
             break;
         default:
@@ -283,16 +119,11 @@ function destinos() {
             console.log("Operacion cancelada");
 
 
-
     }
-
 }
 
 
-
 destinos();
-
-
 
 
 
