@@ -7,15 +7,277 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
+
 </head>
 
 <body>
     <header>
-        <h1>hola</h1>
-       
+        <h1 id="titulo">Coder Viajes</h1>
+
+        <div id="contenedor">
+
+            <form action="" id="formulario">
+                <div id="caja1">
+                    <input type="text" id="destino" placeholder="Introduzca el destino">
+
+
+                    <input type="number" id="personas" placeholder="Cantidad de Personas">
+
+
+                    <input id="btn" type="submit" value ="Obtener">
+                </div>
+
+
+            </form>
+        </div>
     </header>
 
+    <main>
+
+        <div id="contCards">
+
+            <div id="cards">
+
+                <img src="./assets/img/destinos-arg/mendoza.jpg" alt="">
+
+                <div id="tabla">
+                    <ul>
+                        <li>Destino: Mendoza</li>
+                        <li>Precio promo dos personas: $20.000</li>
+                        <li>precio por persona: $13.000</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div id="cards">
+
+                <img src="./assets/img/destinos-arg/jujuy.jfif" alt="">
+
+                <div id="tabla">
+                    <ul>
+                        <li>Destino: Jujuy</li>
+                        <li>Precio promo dos personas: $40.000</li>
+                        <li>precio por persona: $25.000</li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div id="cards">
+
+                <img src="./assets/img/destinos-arg/san-luis.jpg" alt="">
+
+                <div id="tabla">
+                    <ul>
+                        <li>Destino: San Luis</li>
+                        <li>Precio promo dos personas: $50.000</li>
+                        <li>precio por persona: $30.000</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div id="cards">
+
+                <img src="./assets/img/destinos-arg/el-bolson.jpg" alt="">
+
+                <div id="tabla">
+                    <ul>
+                        <li>Destino: El Bolson</li>
+                        <li>Precio promo dos personas: $60.000</li>
+                        <li>precio por persona: $35.00</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div id="cards">
+
+                <img src="./assets/img/destinos-arg/mar-del-plata.jpg" alt="">
+
+                <div id="tabla">
+                    <ul>
+                        <li>Destino: Mar del Plata</li>
+                        <li>Precio promo dos personas: $25.000</li>
+                        <li>precio por persona: $15.000</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div id="cards">
+
+                <img src="./assets/img/destinos-arg/tierra-del-fuego.jpg" alt="">
+
+                <div id="tabla">
+                    <ul>
+                        <li>Destino: Tierra del Fuego</li>
+                        <li>Precio promo dos personas: $70.000</li>
+                        <li>precio por persona: $40.000</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div id="cards">
+
+                <img src="./assets/img/destinos-arg/bariloche.jpg" alt="">
+
+                <div id="tabla">
+                    <ul>
+                        <li>Destino: Bariloche</li>
+                        <li>Precio promo dos personas: $65.000</li>
+                        <li>precio por persona: $45.000</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div id="cards">
+
+                <img src="./assets/img/destinos-arg/tucuman.jpg" alt="">
+
+                <div id="tabla">
+                    <ul>
+                        <li>Destino: Tucuman</li>
+                        <li>Precio promo dos personas: $35.000</li>
+                        <li>precio por persona: $18.000</li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+        <div id="conteimg">
+            <div id="conteCarrusel">
+
+                <div class="itemCarrusel" id="itemCarrusel-1">
+                    <div class="tarjetaCarrusel" id="tarjetaCarrusel-1">
+                        <img class="img-1" src="./assets/img/destinos/buzios.PNG" alt="">
+                        <p>Buzios</p>
+                    </div>
+                    <div class="flechasCarrusel">
+                        <a href="#itemCarrusel-10"><i class="fa-solid fa-chevron-left"></i></a>
+                        <a href="#itemCarrusel-2"><i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="itemCarrusel" id="itemCarrusel-2">
+                    <div class="tarjetaCarrusel" id="tarjetaCarrusel-2">
+                        <img src="./assets/img/destinos/cancun.PNG" alt="">
+                    </div>
+                    <div class="flechasCarrusel">
+                        <a href="#itemCarrusel-1"><i class="fa-solid fa-chevron-left"></i></a>
+                        <a href="#itemCarrusel-3"><i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="itemCarrusel" id="itemCarrusel-3">
+                    <div class="tarjetaCarrusel" id="tarjetaCarrusel-3">
+                        <img src="./assets/img/destinos/florianopolis.PNG" alt="">
+                    </div>
+                    <div class="flechasCarrusel">
+                        <a href="#itemCarrusel-2"><i class="fa-solid fa-chevron-left"></i></a>
+                        <a href="#itemCarrusel-4"><i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="itemCarrusel" id="itemCarrusel-4">
+                    <div class="tarjetaCarrusel" id="tarjetaCarrusel-4">
+                        <img src="./assets/img/destinos/maceio.PNG" alt="">
+                    </div>
+                    <div class="flechasCarrusel">
+                        <a href="#itemCarrusel-3"><i class="fa-solid fa-chevron-left"></i></a>
+                        <a href="#itemCarrusel-5"><i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="itemCarrusel" id="itemCarrusel-5">
+                    <div class="tarjetaCarrusel" id="tarjetaCarrusel-5">
+                        <img src="./assets/img/destinos/mendoza.PNG" alt="">
+                    </div>
+                    <div class="flechasCarrusel">
+                        <a href="#itemCarrusel-4"><i class="fa-solid fa-chevron-left"></i></a>
+                        <a href="#itemCarrusel-6"><i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="itemCarrusel" id="itemCarrusel-6">
+                    <div class="tarjetaCarrusel" id="tarjetaCarrusel-6">
+                        <img src="./assets/img/destinos/puerto-iguazu.PNG" alt="">
+                    </div>
+                    <div class="flechasCarrusel">
+                        <a href="#itemCarrusel-5"><i class="fa-solid fa-chevron-left"></i></a>
+                        <a href="#itemCarrusel-7"><i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="itemCarrusel" id="itemCarrusel-7">
+                    <div class="tarjetaCarrusel" id="tarjetaCarrusel-7">
+                        <img src="./assets/img/destinos/punta-cana.PNG" alt="">
+                    </div>
+                    <div class="flechasCarrusel">
+                        <a href="#itemCarrusel-6"><i class="fa-solid fa-chevron-left"></i></a>
+                        <a href="#itemCarrusel-8"><i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="itemCarrusel" id="itemCarrusel-8">
+                    <div class="tarjetaCarrusel" id="tarjetaCarrusel-8">
+                        <img src="./assets/img/destinos/rio-de-janeiro.PNG" alt="">
+                    </div>
+                    <div class="flechasCarrusel">
+                        <a href="#itemCarrusel-7"><i class="fa-solid fa-chevron-left"></i></a>
+                        <a href="#itemCarrusel-9"><i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="itemCarrusel" id="itemCarrusel-9">
+                    <div class="tarjetaCarrusel" id="tarjetaCarrusel-9">
+                        <img src="./assets/img/destinos/san-carlos-de-bariloche.PNG" alt="">
+                    </div>
+                    <div class="flechasCarrusel">
+                        <a href="#itemCarrusel-8"><i class="fa-solid fa-chevron-left"></i></a>
+                        <a href="#itemCarrusel-10"><i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="itemCarrusel" id="itemCarrusel-10">
+                    <div class="tarjetaCarrusel" id="tarjetaCarrusel-10">
+                        <img src="./assets/img/destinos/san-carlos-de-bariloche.PNG" alt="">
+                    </div>
+                    <div class="flechasCarrusel">
+                        <a href="#itemCarrusel-9"><i class="fa-solid fa-chevron-left"></i></a>
+                        <a href="#itemCarrusel-1"><i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+            <div id="imgCuotas">
+                <img src="./assets/img/beneficios/12cuotas.PNG" alt="12 cuotas">
+            </div>
+
+
+        </div>
+
+
+
+
+
+    </main>
+
+
+
+
+
+
+    <script src="https://kit.fontawesome.com/24fcf32022.js" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
+
+
 </body>
 
 </html>

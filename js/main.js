@@ -1,142 +1,165 @@
 
-
-
-
-function numeroDeTarjeta(numero) {
-    if (numero === 12345678912) {
-        alert("pago realizado");
-
-    } else {
-        alert("Numero de tarjeta invalido");
-    }
-}
-
-function nTarjeta(tarjeta) {
-    if (tarjeta) {
-        let numero = Number(prompt("Ingresar numero"));
-        numeroDeTarjeta(numero);
-    } else {
-        alert("Introduzca la tarjeta");
-
-    }
-}
-
-
-
-function ingresarTarjeta() {
-    let tarjeta = confirm("Ingrese la tarjeta");
-
-    nTarjeta(tarjeta);
-}
-
-function salir() {
-    alert("Proceso terminado")
-}
-
 const carrito = [];
-const obj = {}
+const paquete = {};
 
-function calcularPrecio(lugar, precioPromo, precioIndividual) {
-    alert("Usted elgio el destino a " + lugar + ", promocion para dos personas");
-    let personas = Number(prompt("Ingrese la catidad de personas"));
-    obj.afluencia = personas; 
-    if (personas === 2) {
-        confirm("Promocion para dos personas " + "$" + precioPromo + " ¿desea confirmar?");
-        console.log(precioPromo);
+
+
+const formulario = document.querySelector("#formulario");
+formulario.addEventListener("submit", destinos);
+
+const btn = document.querySelector("#btn");
+console.log(btn);
+
+
+
+
+function calcularPrecio(precioPromo, precioIndividual) {
+
+
+    
+    const personas = document.querySelector("#personas");
+    paquete.afluencia = personas.value;
+    localStorage.setItem("paquete", JSON.stringify(paquete));
+
+
+    if (personas.value == 2) {
+        console.log(personas.value);
         carrito.push("Precio final $" + precioPromo);
-        obj.precio = precioPromo;
-        console.log(obj);
-        console.log(carrito);
-        alert("su importe a pagar es de $" + carrito);
-        ingresarTarjeta();
-    } else if (personas >= 1) {
-        let resultado = personas * precioIndividual;
-        confirm("Precio de su destino " + resultado + " ¿desea confirmar?");
-        console.log(resultado);
-        carrito.push("Precio final $" + resultado);
-        obj.precio = resultado;
-        console.log(obj);
-        console.log(carrito);
-        alert(carrito);
-        ingresarTarjeta();
+        paquete.precio = precioPromo;
+        paquete.promocion = "Promo " + 2 + " personas.";
 
-    } else {
-        salir();
+
+
+    } else if (personas.value >= 1) {
+        let resultado = personas.value * precioIndividual;
+
+        carrito.push("Monto a pagar $" + resultado);
+        paquete.precioUnidad = resultado;
+
+
+
+    }
+
+
+    for (let i = 0; i < carrito.length; i += 1) {
+        console.log(carrito[i]);
+    }
+    for (item in paquete) {
+        console.log(item);
     }
 }
 
 
 
-function destinos() {
-    
-    const sitio = prompt(`
-    1: Mendoza.
-    2: Jujuy.
-    3: San Luis.
-    4: El Bolson.
-    5: Mar Del Plata, Buenos Aires.
-    6: Tierra del Fuego.
-    7: Bariloche
-    8: Tucuman.
-    9: Cancelar la operacion.
-    Ingrese la opcion para su destino.`)
-    
-    let destinosTuristicos = sitio.toLowerCase();
-    obj.lugar = destinosTuristicos;
 
 
-    switch (destinosTuristicos) {
-        case "mendoza":
-            calcularPrecio("Mendoza", 20000, 13000);
+function destinos(evt) {
+
+
+    evt.preventDefault();
+    const destino = document.querySelector("#destino");
+    paquete.lugar = destino.value;
+    localStorage.setItem("paquete", JSON.stringify(paquete));
+
+
+
+
+    //console.log(destino);
+    //console.log(destino.value);
+    let plaza = destino.value.toLowerCase()
+
+    switch (plaza) {
+        case "Mendoza":
+            calcularPrecio(20000, 13000);
             break;
 
-        case "jujuy":
-            calcularPrecio("Jujuy", 40000, 25000);
+        case "Jujuy":
+            calcularPrecio(40000, 25000);
             break;
-        case "san luis":
-            calcularPrecio("San Luis, Cordoba", 50000, 30000);
+        case "San Luis":
+            calcularPrecio(50000, 30000);
             break;
-        case "el bolson":
-            calcularPrecio("El Bolson, Rio Negro", 60000, 35000);
+        case "El Bolson":
+            calcularPrecio(60000, 35000);
             break;
-        case "mar del plata":
-            calcularPrecio("Mar del Plata", 25000, 15000);
+        case "Mar del Plata":
+            calcularPrecio(25000, 15000);
             break;
-        case "tierra del fuego":
-            calcularPrecio("Tierra del Fuego", 70000, 40000);
+        case "Tierra del Fuego":
+            calcularPrecio(70000, 40000);
             break;
-        case "bariloche":
-            calcularPrecio("bariloche, Rio Negro.", 65000, 45000);
+        case "Bariloche":
+            calcularPrecio(65000, 45000);
             break;
-        case "tucuman":
-            calcularPrecio("Tucuman", 35000, 18000);
+        case "Tucuman":
+            calcularPrecio(35000, 18000);
             break;
-        case "salir":
-            salir();
-            break;
+
         default:
-            alert("Operacion cancelada");
-            console.log("Operacion cancelada");
+        //console.log("Operacion cancelada");
 
 
     }
+
+
+
+
+    btn.addEventListener("click", function () {
+
+
+
+
+        formulario.innerHTML =
+            `
+    <div id="contenedor2">   
+
+        <div id="caja2">
+
+            <ul>
+                
+                <li>Destino: ${plaza}</li>
+                <li>Personas: ${personas.value}</li>
+           //undefined     <li>Precio: ${paquete.precio}</li> //undefined
+                
+
+            </ul>
+
+        </div>
+
+        <form id="formulario2">
+        
+            <div id="caja4">
+                <label id="letra" for="numeroDeTarjeta">Tarjeta</label>
+                <input type="number" id="numeroDeTarjeta" placeholder="N° de Tarjeta" required>
+
+                <label id="letra"  for="Nombre">Nombre</label>
+                <input type="text" id="nombre" placeholder="Nombre que aparece en la tarjeta " required>
+                
+                <label id="letra"  for="fecha">Fecha</label>
+                <input type="number" id="fecha" placeholder="Fecha de vencimiento" required>
+                
+                
+                <label id="letra"  for="dni">D.N.I</label>
+                <input type="number" id="dni" placeholder="Introduzca el D.N.I" required>
+
+
+                
+                
+                
+
+                <input id="btn2" type="submit" value ="Pagar">
+                <input id="btn3" type="reset" value ="Cancelar">
+                
+            </div>
+        
+        
+            
+        
+        </form>
+
+    </div>
+        `
+
+
+    })
 }
-
-
-destinos();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
