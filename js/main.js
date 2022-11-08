@@ -1,6 +1,10 @@
 
 const carrito = [];
+<<<<<<< HEAD
 const paquete = [{}, {}]
+=======
+const paquete = {};
+>>>>>>> 0379e05aa9800c630c3232fd33a5ff02fdc55254
 
 
 
@@ -8,13 +12,18 @@ const formulario = document.querySelector("#formulario");
 formulario.addEventListener("submit", destinos);
 
 const btn = document.querySelector("#btn");
+<<<<<<< HEAD
 
+=======
+console.log(btn);
+>>>>>>> 0379e05aa9800c630c3232fd33a5ff02fdc55254
 
 
 
 
 function calcularPrecio(precioPromo, precioIndividual) {
 
+<<<<<<< HEAD
     const personas = document.querySelector("#personas");
 
 
@@ -24,10 +33,17 @@ function calcularPrecio(precioPromo, precioIndividual) {
 
     paquete.afluencia = personas.value;
 
+=======
+
+    
+    const personas = document.querySelector("#personas");
+    paquete.afluencia = personas.value;
+>>>>>>> 0379e05aa9800c630c3232fd33a5ff02fdc55254
     localStorage.setItem("paquete", JSON.stringify(paquete));
 
 
     if (personas.value == 2) {
+<<<<<<< HEAD
         //console.log(precioPromo);
         carrito.push("Precio final $" + precioPromo);
         paquete.precio = precioPromo;
@@ -43,6 +59,21 @@ function calcularPrecio(precioPromo, precioIndividual) {
         paquete.precio = resultado;
        // console.log(paquete);
        // console.log(carrito);
+=======
+        console.log(personas.value);
+        carrito.push("Precio final $" + precioPromo);
+        paquete.precio = precioPromo;
+        paquete.promocion = "Promo " + 2 + " personas.";
+
+
+
+    } else if (personas.value >= 1) {
+        let resultado = personas.value * precioIndividual;
+
+        carrito.push("Monto a pagar $" + resultado);
+        paquete.precioUnidad = resultado;
+
+>>>>>>> 0379e05aa9800c630c3232fd33a5ff02fdc55254
 
 
     }
@@ -103,6 +134,7 @@ function destinos(evt) {
             break;
 
         default:
+<<<<<<< HEAD
             //console.log("Operacion cancelada");
 
 
@@ -118,6 +150,23 @@ btn.addEventListener("click", function () {
 
     formulario.innerHTML =
         `
+=======
+        //console.log("Operacion cancelada");
+
+
+    }
+
+
+
+
+    btn.addEventListener("click", function () {
+
+
+
+
+        formulario.innerHTML =
+            `
+>>>>>>> 0379e05aa9800c630c3232fd33a5ff02fdc55254
     <div id="contenedor2">   
 
         <div id="caja2">
@@ -126,7 +175,11 @@ btn.addEventListener("click", function () {
                 
                 <li>Destino: ${plaza}</li>
                 <li>Personas: ${personas.value}</li>
+<<<<<<< HEAD
                 <li>Precio: ${carrito}</li>
+=======
+           //undefined     <li>Precio: ${paquete.precio}</li> //undefined
+>>>>>>> 0379e05aa9800c630c3232fd33a5ff02fdc55254
                 
 
             </ul>
@@ -168,5 +221,9 @@ btn.addEventListener("click", function () {
         `
 
 
+<<<<<<< HEAD
 })
+=======
+    })
+>>>>>>> 0379e05aa9800c630c3232fd33a5ff02fdc55254
 }
